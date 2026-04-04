@@ -20,9 +20,9 @@ const WhereLogin = () => {
   const handleGoogleLogin = async () => {
     try {
       const { error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
+        provider: "google",
         options: {
-          redirectTo: `${window.location.origin}/vibez/where/register`,
+          redirectTo: `${window.location.origin}/auth/callback`,
         },
       });
       if (error) {
